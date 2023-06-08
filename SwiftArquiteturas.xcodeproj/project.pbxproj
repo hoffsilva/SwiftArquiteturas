@@ -60,6 +60,47 @@
 		0BCA41542A326400005B2DF3 /* SwiftArquiteturas */ = {
 			isa = PBXGroup;
 			children = (
+				0BCA41722A327493005B2DF3 /* Source */,
+				0BCA416E2A327457005B2DF3 /* API */,
+				0BCA41632A326401005B2DF3 /* Info.plist */,
+			);
+			path = SwiftArquiteturas;
+			sourceTree = "<group>";
+		};
+		0BCA416E2A327457005B2DF3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0BCA41712A32747B005B2DF3 /* Provider */,
+				0BCA41702A32746F005B2DF3 /* Manager */,
+				0BCA416F2A32745D005B2DF3 /* Business */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0BCA416F2A32745D005B2DF3 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		0BCA41702A32746F005B2DF3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0BCA41712A32747B005B2DF3 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Provider;
+			sourceTree = "<group>";
+		};
+		0BCA41722A327493005B2DF3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
 				0BCA41692A3264CB005B2DF3 /* GoogleService-Info.plist */,
 				0BCA41552A326400005B2DF3 /* AppDelegate.swift */,
 				0BCA41572A326400005B2DF3 /* SceneDelegate.swift */,
@@ -67,9 +108,8 @@
 				0BCA415B2A326400005B2DF3 /* Main.storyboard */,
 				0BCA415E2A326401005B2DF3 /* Assets.xcassets */,
 				0BCA41602A326401005B2DF3 /* LaunchScreen.storyboard */,
-				0BCA41632A326401005B2DF3 /* Info.plist */,
 			);
-			path = SwiftArquiteturas;
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
