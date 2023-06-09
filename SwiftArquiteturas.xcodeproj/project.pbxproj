@@ -15,6 +15,11 @@
 		0BCA41622A326401005B2DF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA41602A326401005B2DF3 /* LaunchScreen.storyboard */; };
 		0BCA416A2A3264CB005B2DF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA41692A3264CB005B2DF3 /* GoogleService-Info.plist */; };
 		0BCA416D2A3265A8005B2DF3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0BCA416C2A3265A8005B2DF3 /* FirebaseAuth */; };
+		0BCA41742A3275AF005B2DF3 /* UserProviderFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA41732A3275AF005B2DF3 /* UserProviderFirebase.swift */; };
+		0BCA41772A327693005B2DF3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA41762A327693005B2DF3 /* UserModel.swift */; };
+		0BCA417A2A3282FA005B2DF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA41792A3282FA005B2DF3 /* Constants.swift */; };
+		0BCA417C2A32B651005B2DF3 /* UserBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA417B2A32B651005B2DF3 /* UserBusiness.swift */; };
+		0BCA417E2A32B78C005B2DF3 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA417D2A32B78C005B2DF3 /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		0BCA41612A326401005B2DF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BCA41632A326401005B2DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BCA41692A3264CB005B2DF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0BCA41732A3275AF005B2DF3 /* UserProviderFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProviderFirebase.swift; sourceTree = "<group>"; };
+		0BCA41762A327693005B2DF3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		0BCA41792A3282FA005B2DF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0BCA417B2A32B651005B2DF3 /* UserBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBusiness.swift; sourceTree = "<group>"; };
+		0BCA417D2A32B78C005B2DF3 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,8 @@
 		0BCA416E2A327457005B2DF3 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				0BCA41782A3282DB005B2DF3 /* Infra */,
+				0BCA41752A327683005B2DF3 /* Model */,
 				0BCA41712A32747B005B2DF3 /* Provider */,
 				0BCA41702A32746F005B2DF3 /* Manager */,
 				0BCA416F2A32745D005B2DF3 /* Business */,
@@ -80,6 +92,7 @@
 		0BCA416F2A32745D005B2DF3 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				0BCA417B2A32B651005B2DF3 /* UserBusiness.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -87,6 +100,7 @@
 		0BCA41702A32746F005B2DF3 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				0BCA417D2A32B78C005B2DF3 /* UserManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -94,6 +108,7 @@
 		0BCA41712A32747B005B2DF3 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
+				0BCA41732A3275AF005B2DF3 /* UserProviderFirebase.swift */,
 			);
 			name = Provider;
 			sourceTree = "<group>";
@@ -110,6 +125,22 @@
 				0BCA41602A326401005B2DF3 /* LaunchScreen.storyboard */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		0BCA41752A327683005B2DF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0BCA41762A327693005B2DF3 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0BCA41782A3282DB005B2DF3 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				0BCA41792A3282FA005B2DF3 /* Constants.swift */,
+			);
+			path = Infra;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,9 +221,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BCA417E2A32B78C005B2DF3 /* UserManager.swift in Sources */,
 				0BCA415A2A326400005B2DF3 /* ViewController.swift in Sources */,
 				0BCA41562A326400005B2DF3 /* AppDelegate.swift in Sources */,
 				0BCA41582A326400005B2DF3 /* SceneDelegate.swift in Sources */,
+				0BCA41772A327693005B2DF3 /* UserModel.swift in Sources */,
+				0BCA41742A3275AF005B2DF3 /* UserProviderFirebase.swift in Sources */,
+				0BCA417A2A3282FA005B2DF3 /* Constants.swift in Sources */,
+				0BCA417C2A32B651005B2DF3 /* UserBusiness.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

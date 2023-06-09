@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct Constants {
+	
+	enum ParametersKeys: String {
+		case userModel = "userModel"
+		case body = "body"
+	}
+	
+}
