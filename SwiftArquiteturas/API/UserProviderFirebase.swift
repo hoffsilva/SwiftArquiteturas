@@ -8,37 +8,33 @@
 import FirebaseAuth
 
 protocol UserProviderProtocol {
-	func register(parameters: [AnyHashable: Any], completionHandler: @escaping (Result<UserModel, Error>) -> Void)
-	func login(parameters: [AnyHashable: Any], completionHandler: @escaping (Result<UserModel, Error>) -> Void)
+	func register(parameters: UserModel, completionHandler: @escaping (Result<UserModel, AuthError>) -> Void)
+	func login(parameters: UserModel, completionHandler: @escaping (Result<UserModel, AuthError>) -> Void)
 }
 
 class UserProviderFirebase: UserProviderProtocol {
 	
 	lazy var auth = Auth.auth()
 	
-	func login(parameters: [AnyHashable : Any], completionHandler: @escaping (Result<UserModel, Error>) -> Void) {
-		let body: NSDictionary = parameters[Constants.ParametersKeys.body.rawValue] as! NSDictionary
-		let userModel = body[Constants.ParametersKeys.userModel] as! UserModel
+	func login(parameters: UserModel, completionHandler: @escaping (Result<UserModel, AuthError>) -> Void) {
 		
-		self.auth.signIn(withEmail: userModel.email, password: userModel.password) { _, error in
+		self.auth.signIn(withEmail: parameters.email, password: parameters.password) { _, error in
 			if let error = error {
-				completionHandler(.failure(error))
+				completionHandler(.failure(AuthError(rawValue: error._code)))
 			} else {
-				completionHandler(.success(userModel))
+				completionHandler(.success(parameters))
 			}
 		}
 		
 	}
 	
-	func register(parameters: [AnyHashable : Any], completionHandler: @escaping (Result<UserModel, Error>) -> Void) {
-		let body: NSDictionary = parameters[Constants.ParametersKeys.body.rawValue] as! NSDictionary
-		let userModel = body[Constants.ParametersKeys.userModel] as! UserModel
+	func register(parameters: UserModel, completionHandler: @escaping (Result<UserModel, AuthError>) -> Void) {
 		
-		self.auth.createUser(withEmail: userModel.email, password: userModel.password) { _, error in
+		self.auth.createUser(withEmail: parameters.email, password: parameters.password) { _, error in
 			if let error = error {
-				completionHandler(.failure(error))
+				completionHandler(.failure(AuthError(rawValue: error._code)))
 			} else {
-				completionHandler(.success(userModel))
+				completionHandler(.success(parameters))
 			}
 		}
 	}
