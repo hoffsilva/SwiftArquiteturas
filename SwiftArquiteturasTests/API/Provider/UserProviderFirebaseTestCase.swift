@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import SwiftArquiteturasAPI
+@testable import SwiftArquiteturas
 
 final class UserProviderFirebaseTestCase: XCTestCase {
 	
@@ -56,6 +56,21 @@ final class UserProviderFirebaseTestCase: XCTestCase {
 				XCTFail("Expected an email already in use!")
 			case .failure(let emailError):
 				XCTAssertEqual(AuthError.emailAlreadyInUse, emailError)
+			}
+			expectation.fulfill()
+		}
+		wait(for: [expectation], timeout: 20)
+	}
+	
+	func test_login_when_the_user_not_found_should_return_an_userNotFoundError() throws {
+		let userModel = UserModel(email: "abc@cdef.efg", password: "abc@cde.efg")
+		let expectation = self.expectation(description: "Scaling")
+		sut.login(parameters: userModel) { result in
+			switch result {
+			case .success:
+				XCTFail("Expected an email not registered!")
+			case .failure(let userError):
+				XCTAssertEqual(AuthError.userNotFound, userError)
 			}
 			expectation.fulfill()
 		}
