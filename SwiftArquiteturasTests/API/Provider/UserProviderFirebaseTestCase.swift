@@ -22,8 +22,8 @@ final class UserProviderFirebaseTestCase: XCTestCase {
 		let expectation = self.expectation(description: "Scaling")
 		sut.register(parameters: userModel) { result in
 			switch result {
-			case .success:
-				XCTFail("Expected invalid email!")
+			case .success(let response):
+				XCTFail("Expected that \(response.email) was invalid!")
 			case .failure(let emailError):
 				XCTAssertEqual(AuthError.invalidEmail, emailError)
 			}
@@ -37,8 +37,8 @@ final class UserProviderFirebaseTestCase: XCTestCase {
 		let expectation = self.expectation(description: "Scaling")
 		sut.register(parameters: userModel) { result in
 			switch result {
-			case .success:
-				XCTFail("Expected invalid password!")
+			case .success(let response):
+				XCTFail("Expected that \(response.password) was invalid - less than 6 characters!")
 			case .failure(let passwordError):
 				XCTAssertEqual(AuthError.invalidPassword, passwordError)
 			}
@@ -52,8 +52,8 @@ final class UserProviderFirebaseTestCase: XCTestCase {
 		let expectation = self.expectation(description: "Scaling")
 		sut.register(parameters: userModel) { result in
 			switch result {
-			case .success:
-				XCTFail("Expected an email already in use!")
+			case .success(let response):
+				XCTFail("Expected that \(response.email) was already in use!")
 			case .failure(let emailError):
 				XCTAssertEqual(AuthError.emailAlreadyInUse, emailError)
 			}
@@ -67,10 +67,56 @@ final class UserProviderFirebaseTestCase: XCTestCase {
 		let expectation = self.expectation(description: "Scaling")
 		sut.login(parameters: userModel) { result in
 			switch result {
-			case .success:
-				XCTFail("Expected an email not registered!")
+			case .success(let response):
+				XCTFail("Expected \(response.email) was not registered!")
 			case .failure(let userError):
 				XCTAssertEqual(AuthError.userNotFound, userError)
+			}
+			expectation.fulfill()
+		}
+		wait(for: [expectation], timeout: 20)
+	}
+	
+	func test_login_when_the_user_is_disabled_should_return_an_userDisabledError() throws {
+		let userModel = UserModel(email: "disabled@disabled.disabled", password: "disabled@disabled.disabled")
+		let expectation = self.expectation(description: "Scaling")
+		sut.login(parameters: userModel) { result in
+			switch result {
+			case .success(let response):
+				XCTFail("Expected that \(response.email) was disabled!")
+			case .failure(let userError):
+				XCTAssertEqual(AuthError.userDisabled, userError)
+			}
+			expectation.fulfill()
+		}
+		wait(for: [expectation], timeout: 20)
+	}
+	
+	func test_login_when_the_password_is_incorrect_should_return_an_wrongPasswordError() throws {
+		let password = "abc@cde.ef"
+		let userModel = UserModel(email: "abc@cde.efg", password: password)
+		let expectation = self.expectation(description: "Scaling")
+		sut.login(parameters: userModel) { result in
+			switch result {
+			case .success(let response):
+				XCTFail("Expected that the password \(response.password) was not equal to \(password)!")
+			case .failure(let userError):
+				XCTAssertEqual(AuthError.wrongPassword, userError)
+			}
+			expectation.fulfill()
+		}
+		wait(for: [expectation], timeout: 20)
+	}
+	
+	func test_login_when_the_email_is_not_valid_should_return_an_invalidEmailError() throws {
+		let userModel = UserModel(email: "notValidEmail", password: "abc@cde.efg")
+		let expectation = self.expectation(description: "Scaling")
+		sut.login(parameters: userModel) { result in
+			switch result {
+			case .success(let response):
+				XCTFail("Expected that \(response.email) was invalid!")
+			case .failure(let emailError):
+				XCTAssertEqual(AuthError.invalidEmail, emailError)
 			}
 			expectation.fulfill()
 		}
