@@ -32,15 +32,30 @@ final class UserProviderFirebaseTestCase: XCTestCase {
 		wait(for: [expectation], timeout: 20)
 	}
 	
-	func test_register_when_the_password_is_not_valid_should_return_an_invalidPasswordError() throws {
+	func test_register_when_the_password_is_does_not_have_at_least_6_characters_should_return_an_invalidPasswordError() throws {
 		let userModel = UserModel(email: "abc@cde.efg", password: "12")
 		let expectation = self.expectation(description: "Scaling")
 		sut.register(parameters: userModel) { result in
 			switch result {
 			case .success:
 				XCTFail("Expected invalid password!")
+			case .failure(let passwordError):
+				XCTAssertEqual(AuthError.invalidPassword, passwordError)
+			}
+			expectation.fulfill()
+		}
+		wait(for: [expectation], timeout: 20)
+	}
+	
+	func test_register_when_the_email_is_already_in_use_should_return_an_emailAlreadyInUseError() throws {
+		let userModel = UserModel(email: "abc@cde.efg", password: "121231")
+		let expectation = self.expectation(description: "Scaling")
+		sut.register(parameters: userModel) { result in
+			switch result {
+			case .success:
+				XCTFail("Expected an email already in use!")
 			case .failure(let emailError):
-				XCTAssertEqual(AuthError.invalidPassword, emailError)
+				XCTAssertEqual(AuthError.emailAlreadyInUse, emailError)
 			}
 			expectation.fulfill()
 		}
