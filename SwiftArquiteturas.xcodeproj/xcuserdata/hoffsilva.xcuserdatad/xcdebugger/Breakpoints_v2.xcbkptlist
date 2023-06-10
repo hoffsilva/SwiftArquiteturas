@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "18664D7B-BD95-4AB6-AA8B-E312212B4DBB"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E5EE625-59A8-4E3D-86C2-9562F079A70F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftArquiteturasTests/API/Provider/UserProviderFirebaseTestCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "test_register_when_the_email_is_not_valid_should_return_an_email_error()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E5EE625-59A8-4E3D-86C2-9562F079A70F - b8149b730f8b8b18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;SwiftArquiteturas.UserModel, Swift.Error&gt;) -&gt; () in SwiftArquiteturasTests.UserProviderFirebaseTestCase.test_register_when_the_email_is_not_valid_should_return_an_email_error() throws -&gt; ()"
+                  moduleName = "SwiftArquiteturasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/SwiftArquiteturas/SwiftArquiteturasTests/API/Provider/UserProviderFirebaseTestCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "3E5EE625-59A8-4E3D-86C2-9562F079A70F - b8149b730f8b8b18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;SwiftArquiteturas.UserModel, Swift.Error&gt;) -&gt; () in SwiftArquiteturasTests.UserProviderFirebaseTestCase.test_register_when_the_email_is_not_valid_should_return_an_email_error() throws -&gt; ()"
+                  moduleName = "SwiftArquiteturasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/SwiftArquiteturas/SwiftArquiteturasTests/API/Provider/UserProviderFirebaseTestCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "3E5EE625-59A8-4E3D-86C2-9562F079A70F - b8149b730f8b8afd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;SwiftArquiteturas.UserModel, Swift.Error&gt;) -&gt; () in SwiftArquiteturasTests.UserProviderFirebaseTestCase.test_register_when_the_email_is_not_valid_should_return_an_email_error() throws -&gt; ()"
+                  moduleName = "SwiftArquiteturasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/SwiftArquiteturas/SwiftArquiteturasTests/API/Provider/UserProviderFirebaseTestCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "3E5EE625-59A8-4E3D-86C2-9562F079A70F - b8149b730f8b8a9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;SwiftArquiteturas.UserModel, Swift.Error&gt;) -&gt; () in SwiftArquiteturasTests.UserProviderFirebaseTestCase.test_register_when_the_email_is_not_valid_should_return_an_email_error() throws -&gt; ()"
+                  moduleName = "SwiftArquiteturasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/SwiftArquiteturas/SwiftArquiteturasTests/API/Provider/UserProviderFirebaseTestCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "3E5EE625-59A8-4E3D-86C2-9562F079A70F - b8149b730f8b8abf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;SwiftArquiteturas.UserModel, Swift.Error&gt;) -&gt; () in SwiftArquiteturasTests.UserProviderFirebaseTestCase.test_register_when_the_email_is_not_valid_should_return_an_email_error() throws -&gt; ()"
+                  moduleName = "SwiftArquiteturasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/SwiftArquiteturas/SwiftArquiteturasTests/API/Provider/UserProviderFirebaseTestCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "448">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D92583C-831D-4C4B-AB9D-5AB5BCF4E37B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftArquiteturasTests/API/Provider/UserProviderFirebaseTestCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "test_register_when_the_email_is_not_valid_should_return_an_email_error()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5D92583C-831D-4C4B-AB9D-5AB5BCF4E37B - b8149b730f8b8ad2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;SwiftArquiteturas.UserModel, Swift.Error&gt;) -&gt; () in SwiftArquiteturasTests.UserProviderFirebaseTestCase.test_register_when_the_email_is_not_valid_should_return_an_email_error() throws -&gt; ()"
+                  moduleName = "SwiftArquiteturasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/SwiftArquiteturas/SwiftArquiteturasTests/API/Provider/UserProviderFirebaseTestCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "5D92583C-831D-4C4B-AB9D-5AB5BCF4E37B - b8149b730f8b8afd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;SwiftArquiteturas.UserModel, Swift.Error&gt;) -&gt; () in SwiftArquiteturasTests.UserProviderFirebaseTestCase.test_register_when_the_email_is_not_valid_should_return_an_email_error() throws -&gt; ()"
+                  moduleName = "SwiftArquiteturasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/SwiftArquiteturas/SwiftArquiteturasTests/API/Provider/UserProviderFirebaseTestCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

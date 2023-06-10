@@ -6,16 +6,21 @@
 //
 
 import XCTest
-@testable import SwiftArquiteturas
+@testable import SwiftArquiteturasAPI
 
 final class UserProviderFirebaseTestCase: XCTestCase {
 	
-	let provider = UserProviderFirebase()
+	private let sut = UserProviderFirebase()
+	
+	override func setUp() {
+		super.setUp()
+		FirebaseConfig.configureFirebase()
+	}
 	
 	func test_register_when_the_email_is_not_valid_should_return_an_invalidEmailError() throws {
 		let userModel = UserModel(email: "notValidEmail", password: "as234ds")
 		let expectation = self.expectation(description: "Scaling")
-		provider.register(parameters: userModel) { result in
+		sut.register(parameters: userModel) { result in
 			switch result {
 			case .success:
 				XCTFail("Expected invalid email!")
@@ -30,7 +35,7 @@ final class UserProviderFirebaseTestCase: XCTestCase {
 	func test_register_when_the_password_is_not_valid_should_return_an_invalidPasswordError() throws {
 		let userModel = UserModel(email: "abc@cde.efg", password: "12")
 		let expectation = self.expectation(description: "Scaling")
-		provider.register(parameters: userModel) { result in
+		sut.register(parameters: userModel) { result in
 			switch result {
 			case .success:
 				XCTFail("Expected invalid password!")
